@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café y Capital — Invierte con Inteligencia</title>
+  <meta name="description" content="Únete a Café y Capital: la membresía en español para dominar tus finanzas personales, invertir con estrategia y construir riqueza a largo plazo.">
+  <meta name="keywords" content="inversiones, finanzas personales, educación financiera, español, comunidad, bolsa de valores">
+  <meta name="author" content="Café y Capital">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cafeycapital.com">
+  <meta property="og:title" content="Café y Capital — Invierte con Inteligencia">
+  <meta property="og:description" content="La membresía en español para dominar tus finanzas e invertir con confianza.">
+  <meta property="og:image" content="https://cafeycapital.com/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Café y Capital">
+  <meta name="twitter:description" content="Finanzas e inversiones en español. Únete ahora.">
+  <link rel="canonical" href="https://cafeycapital.com">
+  <style>
+    :root {
+      --bg: #080D18;
+      --bg2: #0D1526;
+      --card: #111D35;
+      --gold: #C9A227;
+      --gold2: #E8C84A;
+      --text: #E6EDF3;
+      --muted: #8B949E;
+      --border: rgba(201,162,39,0.18);
+      --r: 12px;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .ann{background:linear-gradient(90deg,#7B3F00,#C9A227,#7B3F00);background-size:200% 100%;animation:shimmer 3s linear infinite;text-align:center;padding:9px 20px;font-size:.8rem;font-weight:700;color:#000;letter-spacing:.5px}
+    @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+    /* ── NAV ── */
+    .nav{position:sticky;top:0;z-index:999;background:rgba(8,13,24,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:12px 0}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav-logo img{height:42px;width:auto}
+    .btn-nav{display:inline-block;padding:10px 22px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;font-weight:800;font-size:.85rem;border-radius:50px;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+    .btn-nav:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,162,39,.45)}
+
+    /* ── HERO ── */
+    .hero{padding:90px 0 70px;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% -5%,rgba(30,45,90,.9) 0%,transparent 65%)}
+    .badge{display:inline-flex;align-items:center;gap:7px;padding:6px 16px;background:rgba(201,162,39,.12);border:1px solid rgba(201,162,39,.3);border-radius:50px;color:var(--gold);font-size:.78rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:28px}
+    .hero h1{font-size:clamp(2rem,5.5vw,3.6rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:22px;letter-spacing:-.5px}
+    .hero h1 .g{color:var(--gold)}
+    .hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--muted);max-width:600px;margin:0 auto 48px;line-height:1.75}
+
+    /* ── COUNTDOWN ── */
+    .cd-wrap{margin:0 auto 44px;max-width:520px}
+    .cd-label{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-bottom:14px;font-weight:600}
+    .cd-row{display:flex;justify-content:center;gap:12px}
+    .cd-box{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 14px;min-width:84px;text-align:center;position:relative;overflow:hidden}
+    .cd-box::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(201,162,39,.06) 0%,transparent 100%)}
+    .cd-num{display:block;font-size:2.4rem;font-weight:900;color:var(--gold);line-height:1;font-variant-numeric:tabular-nums}
+    .cd-unit{display:block;font-size:.6rem;text-transform:uppercase;letter-spacing:1.8px;color:var(--muted);margin-top:6px;font-weight:600}
+    .cd-sep{font-size:2rem;font-weight:900;color:var(--gold);align-self:center;opacity:.5;margin-top:-8px}
+
+    /* ── CTAs ── */
+    .hero-cta{display:flex;flex-direction:column;align-items:center;gap:14px}
+    .btn-hero{display:inline-block;padding:18px 48px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;font-weight:900;font-size:1.05rem;border-radius:50px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 24px rgba(201,162,39,.35);letter-spacing:.3px}
+    .btn-hero:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(201,162,39,.55)}
+    .guarantee{font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+    .guarantee svg{color:var(--gold)}
+
+    /* ── STATS ── */
+    .stats{padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
+    .stats-grid{display:flex;justify-content:center;gap:0;flex-wrap:wrap}
+    .stat{flex:1;min-width:140px;text-align:center;padding:20px 16px;border-right:1px solid var(--border)}
+    .stat:last-child{border-right:none}
+    .stat-num{font-size:2rem;font-weight:900;color:var(--gold);display:block}
+    .stat-txt{font-size:.8rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+
+    /* ── SECTIONS ── */
+    .section{padding:80px 0}
+    .sec-tag{display:inline-block;font-size:.72rem;text-transform:uppercase;letter-spacing:2.5px;color:var(--gold);font-weight:700;margin-bottom:12px}
+    .sec-title{font-size:clamp(1.6rem,3vw,2.5rem);font-weight:900;color:#fff;margin-bottom:16px;letter-spacing:-.3px}
+    .sec-sub{font-size:1.02rem;color:var(--muted);max-width:540px;line-height:1.75}
+    .center-text{text-align:center}
+    .center-text .sec-sub{margin:0 auto}
+
+    /* ── BENEFITS ── */
+    .benefits{background:var(--bg2)}
+    .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:48px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;transition:transform .2s,border-color .2s}
+    .card:hover{transform:translateY(-4px);border-color:rgba(201,162,39,.4)}
+    .card-icon{font-size:2rem;margin-bottom:18px;display:block}
+    .card h3{font-size:1.02rem;font-weight:700;color:#fff;margin-bottom:8px}
+    .card p{font-size:.88rem;color:var(--muted);line-height:1.65}
+
+    /* ── FOR WHO ── */
+    .who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:40px}
+    .who-item{display:flex;align-items:flex-start;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+    .who-check{color:var(--gold);font-size:1.1rem;flex-shrink:0;margin-top:2px;font-weight:900}
+    .who-item p{font-size:.92rem;color:var(--text);line-height:1.55}
+
+    /* ── TESTIMONIALS ── */
+    .testimonials{background:var(--bg2)}
+    .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:48px}
+    .tcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px}
+    .stars{color:var(--gold);font-size:.9rem;letter-spacing:3px;margin-bottom:16px}
+    .tcard blockquote{font-size:.9rem;color:var(--muted);line-height:1.75;font-style:italic;margin-bottom:20px}
+    .author{display:flex;align-items:center;gap:12px}
+    .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#7B3F00);display:flex;align-items:center;justify-content:center;font-weight:900;color:#000;font-size:.95rem;flex-shrink:0}
+    .author-info strong{display:block;font-size:.88rem;color:#fff}
+    .author-info small{font-size:.75rem;color:var(--muted)}
+
+    /* ── OFFER ── */
+    .offer{text-align:center;background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(30,45,90,.6) 0%,transparent 70%)}
+    .offer-card{max-width:540px;margin:44px auto 0;background:var(--card);border:1px solid rgba(201,162,39,.35);border-radius:20px;padding:48px 40px;box-shadow:0 8px 52px rgba(201,162,39,.1)}
+    .offer-badge{display:inline-block;padding:5px 16px;background:var(--gold);color:#000;font-weight:900;font-size:.75rem;border-radius:50px;margin-bottom:20px;text-transform:uppercase;letter-spacing:1.5px}
+    .offer-title{font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:6px}
+    .offer-sub{color:var(--muted);font-size:.9rem;margin-bottom:28px}
+    .offer-price{font-size:3.2rem;font-weight:900;color:#fff;line-height:1}
+    .offer-price sup{font-size:1.4rem;vertical-align:super;color:var(--gold)}
+    .offer-period{color:var(--muted);font-size:.9rem;margin:8px 0 28px}
+    .offer-list{list-style:none;text-align:left;margin:0 0 32px}
+    .offer-list li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.9rem;color:var(--text)}
+    .offer-list li:last-child{border-bottom:none}
+    .chk{color:var(--gold);font-weight:900;font-size:1rem}
+    .btn-offer{display:block;width:100%;padding:17px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;font-weight:900;font-size:1.05rem;border-radius:50px;text-align:center;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 24px rgba(201,162,39,.35)}
+    .btn-offer:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,162,39,.5)}
+    .secure{margin-top:14px;font-size:.78rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:6px}
+
+    /* ── FAQ ── */
+    .faq-wrap{max-width:700px;margin:44px auto 0}
+    .faq-item{border:1px solid var(--border);border-radius:var(--r);margin-bottom:10px;overflow:hidden}
+    .faq-btn{width:100%;background:var(--card);border:none;padding:20px 24px;text-align:left;color:#fff;font-size:.95rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:background .2s;font-family:inherit}
+    .faq-btn:hover{background:rgba(201,162,39,.06)}
+    .faq-icon{color:var(--gold);font-size:1.3rem;line-height:1;flex-shrink:0;transition:transform .3s;font-weight:300}
+    .faq-body{background:var(--card);overflow:hidden;max-height:0;transition:max-height .35s ease,padding .25s}
+    .faq-body p{padding:0 24px;color:var(--muted);font-size:.9rem;line-height:1.75}
+    .faq-item.open .faq-body{max-height:200px;padding-bottom:20px}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+
+    /* ── FOOTER ── */
+    footer{background:#050810;border-top:1px solid var(--border);padding:44px 0 24px}
+    .footer-top{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;margin-bottom:32px}
+    .footer-logo img{height:36px}
+    .footer-tagline{font-size:.85rem;color:var(--muted)}
+    .footer-links{display:flex;gap:28px;flex-wrap:wrap;justify-content:center}
+    .footer-links a{font-size:.82rem;color:var(--muted);transition:color .2s}
+    .footer-links a:hover{color:var(--gold)}
+    .footer-copy{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;text-align:center;font-size:.75rem;color:var(--muted);opacity:.5}
+
+    /* ── MOBILE ── */
+    @media(max-width:640px){
+      .hero{padding:60px 0 50px}
+      .hero h1{font-size:1.85rem}
+      .cd-box{min-width:68px;padding:14px 8px}
+      .cd-num{font-size:1.9rem}
+      .cd-sep{display:none}
+      .btn-hero{padding:15px 32px;font-size:.95rem}
+      .stats-grid{flex-direction:column;gap:0}
+      .stat{border-right:none;border-bottom:1px solid var(--border)}
+      .stat:last-child{border-bottom:none}
+      .offer-card{padding:32px 22px}
+      .offer-price{font-size:2.4rem}
+      .section{padding:60px 0}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ann">☕ Oferta de lanzamiento — Precio especial solo hasta el 5 de julio a las 11:59 PM &nbsp;|&nbsp; No se repite</div>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOTAgNjgiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUsMTIpIj48cmVjdCB4PSIwIiB5PSIxNiIgd2lkdGg9IjUwIiBoZWlnaHQ9IjM0IiByeD0iMyIgZmlsbD0iIzdCNEEyQSIvPjxyZWN0IHg9Ii0zIiB5PSIxMCIgd2lkdGg9IjU2IiBoZWlnaHQ9IjEwIiByeD0iMiIgZmlsbD0iIzlCNjA0MCIvPjxwYXRoIGQ9Ik01MCAyNCBRNjUgMjQgNjUgMzQgUTY1IDQ0IDUwIDQ0IiBmaWxsPSJub25lIiBzdHJva2U9IiM3QjRBMkEiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTEyIDggUTE2IDIgMTIgLTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTIyNyIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0yNSA4IFEyOSAyIDI1IC0yIiBmaWxsPSJub25lIiBzdHJva2U9IiNDOUEyMjciIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMzggOCBRNDIgMiAzOCAtMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQzlBMjI3IiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHRleHQgeD0iNzYiIHk9IjQzIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIyNyIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNDOUEyMjciPkNhZiYjMjMzOyA8dHNwYW4gZmlsbD0iI0ZGRkZGRiI+eTwvdHNwYW4+IENhcGl0YWw8L3RleHQ+PC9nPjwvc3ZnPgo=" alt="Café y Capital">
+      </a>
+      <a href="https://buy.stripe.com/7sYfZgfqoeUZeDjaHmbfO00" class="btn-nav" target="_blank" rel="noopener">Únete ahora →</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="badge">☕ Lanzamiento exclusivo &nbsp;·&nbsp; Plazas limitadas</div>
+        <h1>Aprende a invertir con<br><span class="g">claridad, estrategia</span><br>y comunidad real</h1>
+        <p class="hero-sub">Café y Capital es la membresía en español que te lleva de "no sé por dónde empezar" a invertir con confianza — con análisis semanales, estrategias probadas y una comunidad que camina contigo.</p>
+
+        <div class="cd-wrap">
+          <p class="cd-label">⏳ Precio de lanzamiento — cierra en:</p>
+          <div class="cd-row">
+            <div class="cd-box"><span class="cd-num" id="cd-d">00</span><span class="cd-unit">Días</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-box"><span class="cd-num" id="cd-h">00</span><span class="cd-unit">Horas</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-box"><span class="cd-num" id="cd-m">00</span><span class="cd-unit">Min</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-box"><span class="cd-num" id="cd-s">00</span><span class="cd-unit">Seg</span></div>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="https://buy.stripe.com/7sYfZgfqoeUZeDjaHmbfO00" class="btn-hero" target="_blank" rel="noopener">Quiero unirme al precio especial →</a>
+          <p class="guarantee">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Pago 100% seguro vía Stripe &nbsp;·&nbsp; Sin compromisos ocultos
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat"><span class="stat-num">500+</span><span class="stat-txt">Miembros activos</span></div>
+          <div class="stat"><span class="stat-num">52</span><span class="stat-txt">Análisis al año</span></div>
+          <div class="stat"><span class="stat-num">100%</span><span class="stat-txt">En español</span></div>
+          <div class="stat"><span class="stat-num">4.9★</span><span class="stat-txt">Valoración media</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BENEFITS -->
+    <section class="section benefits">
+      <div class="container">
+        <p class="sec-tag">¿Qué incluye?</p>
+        <h2 class="sec-title">Todo lo que necesitas para<br>invertir sin complicaciones</h2>
+        <div class="grid4">
+          <div class="card">
+            <span class="card-icon">📊</span>
+            <h3>Análisis semanales</h3>
+            <p>Recibe cada semana un análisis claro del mercado: qué está pasando, por qué importa y qué puedes hacer al respecto.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">🎯</span>
+            <h3>Estrategias probadas</h3>
+            <p>Aprende las mismas estrategias de inversión que usan los profesionales, explicadas en lenguaje sencillo y directo.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">🤝</span>
+            <h3>Comunidad activa</h3>
+            <p>Conéctate con cientos de inversores hispanohablantes que comparten tus metas y tu idioma.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">📱</span>
+            <h3>Acceso desde cualquier lugar</h3>
+            <p>Todo el contenido disponible en tu teléfono, tablet o computadora. Aprende a tu ritmo, en tu horario.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">☕</span>
+            <h3>Conversaciones reales</h3>
+            <p>Nada de jerga inútil. Explicamos el mundo de las inversiones como si lo platicáramos frente a un café.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">🔔</span>
+            <h3>Alertas de oportunidad</h3>
+            <p>Recibe notificaciones cuando surjan oportunidades relevantes que vale la pena considerar.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">📚</span>
+            <h3>Biblioteca de recursos</h3>
+            <p>Acceso a guías, plantillas y materiales educativos para que puedas seguir aprendiendo a tu ritmo.</p>
+          </div>
+          <div class="card">
+            <span class="card-icon">🧠</span>
+            <h3>Mentoría grupal</h3>
+            <p>Sesiones mensuales en vivo para resolver dudas, analizar casos reales y crecer juntos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOR WHO -->
+    <section class="section">
+      <div class="container">
+        <p class="sec-tag">¿Es para mí?</p>
+        <h2 class="sec-title">Café y Capital es para ti si…</h2>
+        <div class="who-grid">
+          <div class="who-item"><span class="who-check">✓</span><p>Quieres empezar a invertir pero no sabes por dónde ni con qué seguridad.</p></div>
+          <div class="who-item"><span class="who-check">✓</span><p>Ya inviertes pero sientes que no tienes una estrategia clara ni consistente.</p></div>
+          <div class="who-item"><span class="who-check">✓</span><p>Buscas análisis de calidad en español, sin anglicismos innecesarios.</p></div>
+          <div class="who-item"><span class="who-check">✓</span><p>Eres emprendedor y quieres que tu dinero trabaje para ti, no al revés.</p></div>
+          <div class="who-item"><span class="who-check">✓</span><p>Quieres pertenecer a una comunidad seria, comprometida y en tu idioma.</p></div>
+          <div class="who-item"><span class="who-check">✓</span><p>Buscas construir riqueza a largo plazo con disciplina y visión, no con atajos.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials">
+      <div class="container center-text">
+        <p class="sec-tag">Lo dicen nuestros miembros</p>
+        <h2 class="sec-title">Resultados reales, personas reales</h2>
+        <div class="grid3">
+          <div class="tcard">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Antes me daba miedo hasta abrir una cuenta de inversión. Ahora entiendo el mercado y tengo un portafolio armado que me da tranquilidad. Café y Capital cambió mi relación con el dinero."</blockquote>
+            <div class="author">
+              <div class="avatar">ML</div>
+              <div class="author-info"><strong>María L.</strong><small>Emprendedora, CDMX</small></div>
+            </div>
+          </div>
+          <div class="tcard">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Llevaba años leyendo sobre inversiones en inglés y no entendía nada. Aquí todo se explica de forma clara, con ejemplos concretos y sin rodeos. Es exactamente lo que buscaba."</blockquote>
+            <div class="author">
+              <div class="avatar">RG</div>
+              <div class="author-info"><strong>Roberto G.</strong><small>Ingeniero, Guadalajara</small></div>
+            </div>
+          </div>
+          <div class="tcard">
+            <div class="stars">★★★★★</div>
+            <blockquote>"La comunidad vale el precio por sí sola. Aprender junto a personas que tienen metas similares a las tuyas es algo que no encuentras en ningún otro lado. 100% recomendable."</blockquote>
+            <div class="author">
+              <div class="avatar">SP</div>
+              <div class="author-info"><strong>Sandra P.</strong><small>Freelancer, Monterrey</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section class="section offer">
+      <div class="container center-text">
+        <p class="sec-tag">Oferta de lanzamiento</p>
+        <h2 class="sec-title">Únete hoy al precio especial</h2>
+        <p class="sec-sub" style="margin:0 auto 0">Esta oferta desaparece el 5 de julio a las 11:59 PM (hora CDMX). No habrá excepciones.</p>
+
+        <div class="offer-card">
+          <span class="offer-badge">Lanzamiento exclusivo</span>
+          <p class="offer-title">Membresía Café y Capital</p>
+          <p class="offer-sub">Acceso completo a todo el contenido y la comunidad</p>
+          <div class="offer-price"><sup>$</sup>XXX</div>
+          <p class="offer-period">pago único / mes (cancela cuando quieras)</p>
+
+          <ul class="offer-list">
+            <li><span class="chk">✓</span> Análisis semanales de mercado en español</li>
+            <li><span class="chk">✓</span> Acceso completo a la comunidad privada</li>
+            <li><span class="chk">✓</span> Biblioteca de recursos y plantillas</li>
+            <li><span class="chk">✓</span> Sesiones mensuales en vivo</li>
+            <li><span class="chk">✓</span> Alertas de oportunidades de inversión</li>
+            <li><span class="chk">✓</span> Soporte directo del equipo</li>
+          </ul>
+
+          <div class="cd-row" style="margin-bottom:28px">
+            <div class="cd-box"><span class="cd-num" id="cd-d2">00</span><span class="cd-unit">Días</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-box"><span class="cd-num" id="cd-h2">00</span><span class="cd-unit">Horas</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-box"><span class="cd-num" id="cd-m2">00</span><span class="cd-unit">Min</span></div>
+            <span class="cd-sep">:</span>
+            <div class="cd-box"><span class="cd-num" id="cd-s2">00</span><span class="cd-unit">Seg</span></div>
+          </div>
+
+          <a href="https://buy.stripe.com/7sYfZgfqoeUZeDjaHmbfO00" class="btn-offer" target="_blank" rel="noopener">Unirme ahora al precio especial →</a>
+          <p class="secure">🔒 Pago seguro · Procesado por Stripe · SSL</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container center-text">
+        <p class="sec-tag">Preguntas frecuentes</p>
+        <h2 class="sec-title">Resolvemos tus dudas</h2>
+        <div class="faq-wrap">
+
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              ¿Necesito experiencia previa en inversiones?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-body"><p>No. Café y Capital está diseñado para todos los niveles. Si eres principiante, te llevamos de la mano. Si ya tienes experiencia, encontrarás análisis profundos y estrategias avanzadas que complementarán lo que ya sabes.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              ¿Cuándo tengo acceso al contenido?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-body"><p>Inmediatamente después de completar tu pago recibirás un correo con tus credenciales de acceso. En menos de 5 minutos estarás dentro de la comunidad y con acceso a todos los materiales.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              ¿Puedo cancelar cuando quiera?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-body"><p>Sí. Si la membresía es mensual, puedes cancelar en cualquier momento desde tu panel sin penalizaciones. Tu acceso continuará hasta el final del periodo pagado.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              ¿El contenido aplica para mi país?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-body"><p>Sí. Cubrimos mercados globales y principios de inversión universales que aplican sin importar si estás en México, Colombia, Argentina, España u otro país de habla hispana. También incluimos perspectivas regionales.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" onclick="toggleFaq(this)">
+              ¿Tienen garantía de satisfacción?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-body"><p>Estamos comprometidos con tu satisfacción. Si en los primeros 7 días sientes que el contenido no es para ti, contáctanos y buscamos una solución juntos. Queremos que tomes la decisión correcta.</p></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section style="padding:60px 0;background:var(--bg2);text-align:center;border-top:1px solid var(--border)">
+      <div class="container">
+        <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:#fff;margin-bottom:12px">¿Listo para tomar el control de tus finanzas?</h2>
+        <p style="color:var(--muted);margin-bottom:32px;font-size:1rem">El precio de lanzamiento vence el 5 de julio. Después, todo sube.</p>
+        <a href="https://buy.stripe.com/7sYfZgfqoeUZeDjaHmbfO00" class="btn-hero" target="_blank" rel="noopener">Quiero empezar hoy →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <a href="/" class="footer-logo">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOTAgNjgiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUsMTIpIj48cmVjdCB4PSIwIiB5PSIxNiIgd2lkdGg9IjUwIiBoZWlnaHQ9IjM0IiByeD0iMyIgZmlsbD0iIzdCNEEyQSIvPjxyZWN0IHg9Ii0zIiB5PSIxMCIgd2lkdGg9IjU2IiBoZWlnaHQ9IjEwIiByeD0iMiIgZmlsbD0iIzlCNjA0MCIvPjxwYXRoIGQ9Ik01MCAyNCBRNjUgMjQgNjUgMzQgUTY1IDQ0IDUwIDQ0IiBmaWxsPSJub25lIiBzdHJva2U9IiM3QjRBMkEiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTEyIDggUTE2IDIgMTIgLTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTIyNyIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0yNSA4IFEyOSAyIDI1IC0yIiBmaWxsPSJub25lIiBzdHJva2U9IiNDOUEyMjciIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMzggOCBRNDIgMiAzOCAtMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQzlBMjI3IiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHRleHQgeD0iNzYiIHk9IjQzIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIyNyIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNDOUEyMjciPkNhZiYjMjMzOyA8dHNwYW4gZmlsbD0iI0ZGRkZGRiI+eTwvdHNwYW4+IENhcGl0YWw8L3RleHQ+PC9nPjwvc3ZnPgo=" alt="Café y Capital">
+        </a>
+        <p class="footer-tagline">Finanzas e inversiones inteligentes en español.</p>
+        <nav class="footer-links">
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/terminos.html">Términos</a>
+          <a href="/contacto.html">Contacto</a>
+        </nav>
+      </div>
+      <p class="footer-copy">© 2026 Café y Capital. Todos los derechos reservados. Las inversiones conllevan riesgos. El contenido es educativo y no constituye asesoría financiera.</p>
+    </div>
+  </footer>
+
+  <script>
+    const DEADLINE = new Date('2026-07-05T23:59:00-06:00');
+
+    function tick() {
+      const now = new Date();
+      const diff = DEADLINE - now;
+
+      if (diff <= 0) {
+        ['cd-d','cd-h','cd-m','cd-s','cd-d2','cd-h2','cd-m2','cd-s2'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = '00';
+        });
+        return;
+      }
+
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      const pad = n => String(n).padStart(2,'0');
+
+      [['cd-d',d],['cd-h',h],['cd-m',m],['cd-s',s],
+       ['cd-d2',d],['cd-h2',h],['cd-m2',m],['cd-s2',s]].forEach(([id,val]) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = pad(val);
+      });
+    }
+
+    tick();
+    setInterval(tick, 1000);
+
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>

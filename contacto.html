@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Café y Capital</title>
+  <meta name="description" content="¿Tienes dudas sobre la membresía Café y Capital? Escríbenos y te respondemos a la brevedad.">
+  <meta name="robots" content="noindex, follow">
+  <style>
+    :root{--bg:#080D18;--bg2:#0D1526;--card:#111D35;--gold:#C9A227;--gold2:#E8C84A;--text:#E6EDF3;--muted:#8B949E;--border:rgba(201,162,39,.18);--r:12px}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:var(--gold);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:960px;margin:0 auto;padding:0 24px}
+    .nav{position:sticky;top:0;z-index:999;background:rgba(8,13,24,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:12px 0}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav-logo img{height:40px;width:auto}
+    .nav-back{font-size:.85rem;color:var(--muted);transition:color .2s}
+    .nav-back:hover{color:var(--gold);text-decoration:none}
+    .main{padding:70px 0 90px}
+    .page-header{text-align:center;margin-bottom:56px}
+    .page-header h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:12px;letter-spacing:-.3px}
+    .page-header p{color:var(--muted);font-size:1.02rem;max-width:500px;margin:0 auto;line-height:1.75}
+    .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+    /* Info cards */
+    .info-cards{display:flex;flex-direction:column;gap:16px}
+    .info-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px}
+    .info-card-icon{font-size:1.6rem;margin-bottom:12px;display:block}
+    .info-card h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:6px}
+    .info-card p,.info-card a{font-size:.88rem;color:var(--muted);line-height:1.6}
+    .info-card a{color:var(--gold)}
+    .info-card a:hover{text-decoration:underline}
+    .cta-box{background:linear-gradient(135deg,rgba(201,162,39,.12),rgba(201,162,39,.04));border:1px solid rgba(201,162,39,.3);border-radius:var(--r);padding:24px;margin-top:4px}
+    .cta-box p{font-size:.88rem;color:var(--muted);margin-bottom:14px;line-height:1.65}
+    .btn-stripe{display:block;text-align:center;padding:13px 20px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;font-weight:800;font-size:.88rem;border-radius:50px;transition:transform .2s,box-shadow .2s}
+    .btn-stripe:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,162,39,.4);text-decoration:none}
+    /* Form */
+    .form-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:36px}
+    .form-card h2{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:6px}
+    .form-card .sub{font-size:.85rem;color:var(--muted);margin-bottom:28px}
+    .field{margin-bottom:20px}
+    .field label{display:block;font-size:.82rem;font-weight:600;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px}
+    .field input,.field select,.field textarea{width:100%;background:#0A1020;border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-size:.9rem;font-family:inherit;transition:border-color .2s,box-shadow .2s;outline:none}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(201,162,39,.5);box-shadow:0 0 0 3px rgba(201,162,39,.1)}
+    .field select{appearance:none;-webkit-appearance:none;cursor:pointer}
+    .field textarea{resize:vertical;min-height:130px;line-height:1.6}
+    .field input::placeholder,.field textarea::placeholder{color:#4A5568}
+    .field select option{background:#0D1526;color:var(--text)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .btn-submit{width:100%;padding:15px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;font-weight:900;font-size:.95rem;border:none;border-radius:50px;cursor:pointer;transition:transform .2s,box-shadow .2s;font-family:inherit;margin-top:8px}
+    .btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(201,162,39,.45)}
+    .btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+    .form-note{font-size:.78rem;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5}
+    /* Success */
+    .success-msg{display:none;text-align:center;padding:40px 20px}
+    .success-msg .icon{font-size:3rem;margin-bottom:16px}
+    .success-msg h3{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:8px}
+    .success-msg p{color:var(--muted);font-size:.9rem}
+    /* Footer */
+    footer{background:#050810;border-top:1px solid var(--border);padding:32px 0;text-align:center}
+    .footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
+    .footer-links a{font-size:.82rem;color:var(--muted)}
+    .footer-links a:hover{color:var(--gold);text-decoration:none}
+    .footer-copy{font-size:.75rem;color:var(--muted);opacity:.5}
+    @media(max-width:768px){
+      .contact-grid{grid-template-columns:1fr}
+      .info-cards{order:2}
+      .form-card{order:1}
+      .form-row{grid-template-columns:1fr}
+      .main{padding:50px 0 70px}
+    }
+    @media(max-width:480px){
+      .form-card{padding:24px 20px}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOTAgNjgiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUsMTIpIj48cmVjdCB4PSIwIiB5PSIxNiIgd2lkdGg9IjUwIiBoZWlnaHQ9IjM0IiByeD0iMyIgZmlsbD0iIzdCNEEyQSIvPjxyZWN0IHg9Ii0zIiB5PSIxMCIgd2lkdGg9IjU2IiBoZWlnaHQ9IjEwIiByeD0iMiIgZmlsbD0iIzlCNjA0MCIvPjxwYXRoIGQ9Ik01MCAyNCBRNjUgMjQgNjUgMzQgUTY1IDQ0IDUwIDQ0IiBmaWxsPSJub25lIiBzdHJva2U9IiM3QjRBMkEiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTEyIDggUTE2IDIgMTIgLTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0M5QTIyNyIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0yNSA4IFEyOSAyIDI1IC0yIiBmaWxsPSJub25lIiBzdHJva2U9IiNDOUEyMjciIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMzggOCBRNDIgMiAzOCAtMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjQzlBMjI3IiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHRleHQgeD0iNzYiIHk9IjQzIiBmb250LWZhbWlseT0iR2VvcmdpYSxzZXJpZiIgZm9udC1zaXplPSIyNyIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNDOUEyMjciPkNhZiYjMjMzOyA8dHNwYW4gZmlsbD0iI0ZGRkZGRiI+eTwvdHNwYW4+IENhcGl0YWw8L3RleHQ+PC9nPjwvc3ZnPgo=" alt="Café y Capital">
+      </a>
+      <a href="/" class="nav-back">← Volver al inicio</a>
+    </div>
+  </nav>
+
+  <main class="main">
+    <div class="container">
+      <div class="page-header">
+        <h1>¿En qué podemos ayudarte?</h1>
+        <p>Escríbenos con cualquier duda sobre la membresía, el contenido o los pagos. Respondemos en menos de 24 horas hábiles.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- LEFT: Info -->
+        <div class="info-cards">
+
+          <div class="info-card">
+            <span class="info-card-icon">📧</span>
+            <h3>Correo directo</h3>
+            <p>Para asuntos urgentes escríbenos directo a:<br>
+              <a href="mailto:hola@cafeycapital.com">hola@cafeycapital.com</a>
+            </p>
+          </div>
+
+          <div class="info-card">
+            <span class="info-card-icon">⏱️</span>
+            <h3>Tiempo de respuesta</h3>
+            <p>Respondemos todos los mensajes en un plazo máximo de <strong style="color:var(--text)">24 horas hábiles</strong> (lunes a viernes).</p>
+          </div>
+
+          <div class="info-card">
+            <span class="info-card-icon">❓</span>
+            <h3>Preguntas frecuentes</h3>
+            <p>Muchas dudas las resolvemos directamente en nuestra <a href="/#faq">sección de FAQ</a> en el inicio.</p>
+          </div>
+
+          <div class="cta-box">
+            <p>¿Ya decidiste unirte? No necesitas esperar respuesta — puedes suscribirte ahora mismo de forma segura.</p>
+            <a href="https://buy.stripe.com/7sYfZgfqoeUZeDjaHmbfO00" class="btn-stripe" target="_blank" rel="noopener">
+              Unirme a Café y Capital →
+            </a>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="form-card">
+          <h2>Envíanos un mensaje</h2>
+          <p class="sub">Completa el formulario y te respondemos pronto.</p>
+
+          <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="nombre">Nombre *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name">
+              </div>
+              <div class="field">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" autocomplete="family-name">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email">Correo electrónico *</label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com" required autocomplete="email">
+            </div>
+
+            <div class="field">
+              <label for="asunto">Asunto *</label>
+              <select id="asunto" name="asunto" required>
+                <option value="" disabled selected>Selecciona un tema</option>
+                <option value="membresia">Información sobre la membresía</option>
+                <option value="pago">Problemas con el pago</option>
+                <option value="acceso">Problemas de acceso</option>
+                <option value="cancelacion">Cancelación o cambios</option>
+                <option value="contenido">Pregunta sobre el contenido</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos tu duda o comentario con detalle..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submit-btn">
+              Enviar mensaje →
+            </button>
+            <p class="form-note">🔒 Tu información está protegida. No la compartimos con terceros.</p>
+
+          </form>
+
+          <div class="success-msg" id="success-msg">
+            <div class="icon">✅</div>
+            <h3>¡Mensaje recibido!</h3>
+            <p>Gracias por escribirnos. Te responderemos en menos de 24 horas hábiles al correo que nos proporcionaste.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <nav class="footer-links">
+        <a href="/">Inicio</a>
+        <a href="/privacidad.html">Privacidad</a>
+        <a href="/terminos.html">Términos</a>
+        <a href="/contacto.html">Contacto</a>
+      </nav>
+      <p class="footer-copy">© 2026 Café y Capital. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contact-form');
+      const btn = document.getElementById('submit-btn');
+      const success = document.getElementById('success-msg');
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const asunto = document.getElementById('asunto').value;
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      if (!nombre || !email || !asunto || !mensaje) {
+        alert('Por favor completa todos los campos requeridos (*).');
+        return;
+      }
+
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRe.test(email)) {
+        alert('Por favor ingresa un correo electrónico válido.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+
+      const mailtoBody = encodeURIComponent(
+        'Nombre: ' + document.getElementById('nombre').value + ' ' + document.getElementById('apellido').value + '\n' +
+        'Correo: ' + email + '\n' +
+        'Asunto: ' + asunto + '\n\n' +
+        'Mensaje:\n' + mensaje
+      );
+
+      window.location.href = 'mailto:hola@cafeycapital.com?subject=' +
+        encodeURIComponent('[Café y Capital] ' + asunto) +
+        '&body=' + mailtoBody;
+
+      setTimeout(() => {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      }, 800);
+    }
+  </script>
+
+</body>
+</html>
